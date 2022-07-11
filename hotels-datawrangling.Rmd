@@ -40,7 +40,7 @@ Fill in the blanks for filtering for hotel bookings where the guest is **not** f
 
 **Note:** You will need to set `eval=TRUE` when you have an answer you want to try out.
 
-```{r travel-whim, eval=FALSE}
+```{r travel-whim, eval=TRUE}
 hotels %>%
   filter(
     country != "USA", 
@@ -59,10 +59,10 @@ In the following chunk, replace
 
 **Note:** You will need to set `eval=TRUE` when you have an answer you want to try out.
 
-```{r some-children, eval=FALSE}
+```{r some-children, eval=TRUE}
 hotels %>%
   filter(
-    children [AT LEAST] 1 [OR] babies [AT LEAST] 1
+    children >= 1 | babies >= 1
     )
 ```
 
