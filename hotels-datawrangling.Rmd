@@ -60,11 +60,12 @@ In the following chunk, replace
 **Note:** You will need to set `eval=TRUE` when you have an answer you want to try out.
 
 ```{r some-children, eval=TRUE}
-hotels %>%
+bookings_with_little_ones <- hotels %>%
   filter(
     children >= 1 | babies >= 1
     )
 ```
+There are `r nrow(bookings_with_little_ones)` bookings that involve a least 1 child or baby
 
 ### Exercise 4.
 
@@ -75,17 +76,19 @@ Then, do the same for city hotels, and compare the numbers of rows in the result
 
 ```{r resort-children}
 hotels %>%
-  filter(hotel == "City Hotel", children >= 1 | babies >= 1)
+  filter(hotel == "City Hotel", children >= 1 | babies >= 1) %>% 
+  nrow()
 # pay attention to correctness and code style
 ```
 
 ```{r city-children}
 hotels %>%
-  filter(hotel == "Resort Hotel", children >= 1 | babies >= 1)
+  filter(hotel == "Resort Hotel", children >= 1 | babies >= 1) %>% 
+  nrow()
 # pay attention to correctness and code style
 ```
 
-There are 5,403 bookings for city hotels with at least 1 child or baby and 3,929 bookings for resort hotels. Thus, there are more city booking with children and babies than resort hotels 
+There are 5,403 bookings for city hotels with at least 1 child or baby and 3,929 bookings for resort hotels. Thus, there seem to be more city booking with children and babies than resort hotels 
 
 ### Exercise 5.
 
