@@ -70,18 +70,22 @@ hotels %>%
 
 Do you think it's more likely to find bookings with children or babies in city hotels or resort hotels?
 Test your intuition.
-Using `filter()` determine the number of bookings in resort hotels that have more than 1 child **or** baby in the room?
+Using `filter()` determine the number of bookings in resort hotels that have at least than 1 child **or** baby in the room?
 Then, do the same for city hotels, and compare the numbers of rows in the resulting filtered data frames.
 
 ```{r resort-children}
-# add code here
+hotels %>%
+  filter(hotel == "City Hotel", children >= 1 | babies >= 1)
 # pay attention to correctness and code style
 ```
 
 ```{r city-children}
-# add code here
+hotels %>%
+  filter(hotel == "Resort Hotel", children >= 1 | babies >= 1)
 # pay attention to correctness and code style
 ```
+
+There are 5,403 bookings for city hotels with at least 1 child or baby and 3,929 bookings for resort hotels. Thus, there are more city booking with children and babies than resort hotels 
 
 ### Exercise 5.
 
