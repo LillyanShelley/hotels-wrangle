@@ -158,6 +158,7 @@ hotels %>%
   filter(adr == min(adr) | adr == max(adr)) %>% 
   select(hotel, adr, arrival_date_year, arrival_date_month, adults, children, babies, is_canceled, is_repeated_guest)
 
+
 ```
 
 ## Data dictionary
