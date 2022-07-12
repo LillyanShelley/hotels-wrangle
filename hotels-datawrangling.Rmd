@@ -123,8 +123,8 @@ hotels %>%
   filter(is_canceled == 0) %>% 
   count(adults, sort = TRUE)
 
-# pay attention to correctness and code style
 ```
+
 
 ### Exercise 7.
 
@@ -132,14 +132,22 @@ Calculate minimum, mean, median, and maximum average daily rate (`adr`) grouped 
 Which type of hotel is higher, on average?
 
 ```{r label-me-3}
-# add code here
-# pay attention to correctness and code style
+hotels %>% 
+  group_by(hotel) %>% 
+  summarize(
+    min_adr = min(adr),
+    mean_adr = mean(adr),
+    median_adr = median(adr),
+    max_adr = max(adr)
+  )
 ```
 
 ### Exercise 8.
 
 We observe two unusual values in the summary statistics above -- a negative minimum, and a very high maximum).
 What types of hotels are these?
+  The city hotel has the very high maximum and the resort hotel has the negative minimum.
+  
 Locate these observations in the dataset and find out the arrival date (year and month) as well as how many people (adults, children, and babies) stayed in the room.
 You can investigate the data in the viewer to locate these values, but preferably you should identify them in a reproducible way with some code.
 
